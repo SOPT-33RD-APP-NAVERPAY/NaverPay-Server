@@ -4,8 +4,9 @@
 
 |                             박예준                             |                                                                현예진                                                                 |
 | :----------------------------------------------------------: |:----------------------------------------------------------------------------------------------------------------------------------:|
-| <img src="" width="300"/> | <img src="" width="300"/> |
+| <img src="https://github.com/SOPT-33RD-APP-NAVERPAY/NaverPay-Server/assets/80024278/a5b6fe21-ee43-4442-95b8-f00654c3ba88" width="300"/> | <img src="https://github.com/SOPT-33RD-APP-NAVERPAY/NaverPay-Server/assets/80024278/f38b7a70-1bf3-48b6-ad8a-05a1deb165be" width="300"/> |
 |              [jun02160](https://github.com/jun02160)               |                                             [eeddiinn](https://github.com/eeddiinn)
+
 
 
 | 담당 역할              |   Role   |
