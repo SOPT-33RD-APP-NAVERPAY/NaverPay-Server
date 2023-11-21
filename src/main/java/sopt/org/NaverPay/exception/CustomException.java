@@ -2,13 +2,17 @@ package sopt.org.NaverPay.exception;
 
 import lombok.Getter;
 
-import javax.lang.model.type.ErrorType;
+@Getter
+public class CustomException extends RuntimeException {
 
-public class CustomException extends RuntimeException{
     private final ErrorType errorType;
 
     public CustomException(ErrorType errorType) {
-       // super(errorType.getMessage());
+        super(errorType.getMessage());
         this.errorType = errorType;
+    }
+
+    public int getHttpStatus() {
+        return errorType.getHttpStatusCode();
     }
 }
