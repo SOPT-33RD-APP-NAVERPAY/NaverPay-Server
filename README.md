@@ -32,6 +32,8 @@
 
 
 ### API 명세서
+https://www.notion.so/dosopt/1a84469188a14164959e2cc5de93846c?v=8e53e7fb378f437bae02546f29a5d68a&pvs=4
+
 
 ### 데이터베이스 ERD
 
