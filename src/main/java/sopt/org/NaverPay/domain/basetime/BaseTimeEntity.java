@@ -1,4 +1,4 @@
-package sopt.org.NaverPay.domain;
+package sopt.org.NaverPay.domain.basetime;
 
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;
@@ -9,7 +9,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 import java.time.LocalDateTime;
 
 @MappedSuperclass
-@EntityListeners((AuditingEntityListener.class))
+@EntityListeners(AuditingEntityListener.class)
 public class BaseTimeEntity {
 
     @CreatedDate
