@@ -13,7 +13,7 @@ import jakarta.persistence.OneToOne;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import sopt.org.NaverPay.domain.basetime.BaseTimeEntity;
+import sopt.org.NaverPay.domain.BaseTimeEntity;
 import sopt.org.NaverPay.domain.brand.Brand;
 import sopt.org.NaverPay.domain.user.User;
 

@@ -36,11 +36,16 @@ public class User {
     private String name;
 
     @Column(nullable = false)
-    private int totalSaving;
+    private int totalSaving = 0;
 
     @OneToMany(fetch = FetchType.LAZY)
     private List<Payment> paymentList = new ArrayList<>();
 
     @OneToMany(fetch = FetchType.LAZY)
     private List<Point> pointList = new ArrayList<>();
+
+
+    public void updatePoint(int saving) {
+        this.totalSaving += saving;
+    }
 }
