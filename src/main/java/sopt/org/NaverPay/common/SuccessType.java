@@ -1,7 +1,12 @@
 package sopt.org.NaverPay.common;
 
+import lombok.AccessLevel;
+import lombok.AllArgsConstructor;
+import lombok.Getter;
 import org.springframework.http.HttpStatus;
 
+@Getter
+@AllArgsConstructor(access = AccessLevel.PROTECTED)
 public enum SuccessType {
     /**
      * 200 OK
@@ -11,9 +16,4 @@ public enum SuccessType {
     private final HttpStatus httpStatus;
     private String message;
 
-    SuccessType(HttpStatus httpStatus, String message)
-    {
-        this.httpStatus = httpStatus;
-        this.message = message;
-    }
 }
