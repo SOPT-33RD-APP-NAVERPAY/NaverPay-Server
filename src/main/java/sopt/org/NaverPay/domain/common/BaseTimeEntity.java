@@ -1,4 +1,4 @@
-package sopt.org.NaverPay.domain;
+package sopt.org.NaverPay.domain.common;
 
 import jakarta.persistence.EntityListeners;
 import jakarta.persistence.MappedSuperclass;

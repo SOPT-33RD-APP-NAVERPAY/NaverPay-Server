@@ -12,12 +12,13 @@ import lombok.AccessLevel;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import sopt.org.NaverPay.domain.common.BaseTimeEntity;
 import sopt.org.NaverPay.domain.user.User;
 
 @Entity
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
-public class BrandLike {
+public class BrandLike extends BaseTimeEntity {
 
     @EmbeddedId
     private BrandLikeId brandLikeId;
