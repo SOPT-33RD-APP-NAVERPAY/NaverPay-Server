@@ -31,6 +31,57 @@
 | 패키지 구조 | 계층형 패키지 구조 |
 
 
+### Project Structure
+
+```yaml
+📂 NaverPay
+
+🗂 src
+    🗂 main
+        🗂 java/sopt/org/NaverPay
+            🗂 controller
+                🗂 brand
+                    🗂 dto
+                        🗂 request
+                        🗂 response
+                🗂 payment
+                    🗂 dto
+                        🗂 request
+                        🗂 response
+                🗂 point
+                    🗂 dto
+                        🗂 request
+                        🗂 response
+                🗂 user
+                    🗂 dto
+                        🗂 request
+                        🗂 response
+            🗂 domain
+                🗂 brand
+                🗂 payment
+                🗂 point
+                🗂 user
+                🗂 common
+            🗂 repository
+                🗂 brand
+                🗂 payment
+                🗂 point
+                🗂 user
+            🗂 service
+                🗂 brand
+                🗂 payment
+                🗂 point
+                🗂 user
+            🗂 global
+                🗂 advice
+                    🗂 config  
+                🗂 exception
+        🗂 resources
+            application.yml
+    🗂 test 
+    
+```
+
 ### API 명세서
 https://www.notion.so/dosopt/1a84469188a14164959e2cc5de93846c?v=8e53e7fb378f437bae02546f29a5d68a&pvs=4
 
