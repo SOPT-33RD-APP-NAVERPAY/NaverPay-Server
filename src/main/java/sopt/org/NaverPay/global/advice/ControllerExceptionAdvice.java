@@ -1,4 +1,4 @@
-package sopt.org.NaverPay.common.advice;
+package sopt.org.NaverPay.global.advice;
 
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
@@ -6,8 +6,8 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Component;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.RestControllerAdvice;
-import sopt.org.NaverPay.exception.ApiResponse;
-import sopt.org.NaverPay.exception.CustomException;
+import sopt.org.NaverPay.global.exception.ApiResponse;
+import sopt.org.NaverPay.global.exception.CustomException;
 
 @Slf4j
 @RestControllerAdvice

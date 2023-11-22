@@ -1,4 +1,4 @@
-package sopt.org.NaverPay.exception;
+package sopt.org.NaverPay.global.exception;
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -7,14 +7,22 @@ import org.springframework.http.HttpStatus;
 
 @Getter
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
-public enum SuccessType {
+public enum ErrorType {
     /**
-     * 200 OK
+     * 400 BAD REQUEST
      */
-    LOGIN_SUCCESS(HttpStatus.OK, "로그인에 성공했습니다."),
+    REQUEST_VALIDATION_EXCEPTION(HttpStatus.BAD_REQUEST, "잘못된 요청입니다"),
 
     /**
-     * 201 CREATED
+     * 401 UNAUTHORIZED
+     */
+
+    /**
+     * 404 NOT FOUND
+     */
+
+    /**
+     * 500 INTERNAL SERVER ERROR
      */
     ;
 
@@ -24,4 +32,5 @@ public enum SuccessType {
     public int getHttpStatusCode() {
         return httpStatus.value();
     }
+
 }

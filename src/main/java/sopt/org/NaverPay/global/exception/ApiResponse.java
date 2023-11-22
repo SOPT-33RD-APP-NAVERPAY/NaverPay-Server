@@ -1,4 +1,4 @@
-package sopt.org.NaverPay.exception;
+package sopt.org.NaverPay.global.exception;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.AccessLevel;
