@@ -64,6 +64,7 @@ public class BrandService {
         if (brandLikeRepository.findByBrandLikeId(brandLikeId).isPresent()) {
             throw new CustomException(ErrorType.ALREADY_LIKE_BRAND);
         }
+        user.addBrandLike(brandLike);
 
         brandLikeRepository.save(brandLike);
         return BrandLikeResponseDto.of(brandLike, true);
@@ -71,11 +72,13 @@ public class BrandService {
 
     @Transactional
     public BrandLikeResponseDto dislikeBrand(Long userId, Long brandId) {
+        User user = findUserById(userId);
         BrandLike brandLike = getBrandLikeById(BrandLikeId.builder()
                 .userId(userId)
                 .brandId(brandId)
                 .build());
         brandLikeRepository.delete(brandLike);
+        user.deleteBrandLike(brandLike);
         return BrandLikeResponseDto.of(brandLike, false);
     }
 
