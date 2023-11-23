@@ -1,5 +1,6 @@
 package sopt.org.NaverPay.controller.brand.dto.response;
 
+import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.databind.PropertyNamingStrategies;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
 import lombok.Builder;
@@ -16,6 +17,8 @@ public class BrandDto {
     private String logoImgUrl;
     private String discountContent;
     private String discountType;
+
+    @JsonInclude(JsonInclude.Include.NON_NULL)
     private Boolean isBrandLike;
 
     public static BrandDto of(Brand brand, Boolean isBrandLike) {

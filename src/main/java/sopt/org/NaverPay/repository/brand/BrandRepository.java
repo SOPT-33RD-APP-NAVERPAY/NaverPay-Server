@@ -10,4 +10,7 @@ public interface BrandRepository extends JpaRepository<Brand, Long> {
     @Query(value = "SELECT * FROM brand ORDER BY RAND() LIMIT 3", nativeQuery = true)
     List<Brand> findRandomThreeBrands();
 
+    @Query(value = "SELECT * FROM brand ORDER BY RAND() LIMIT 4", nativeQuery = true)
+    List<Brand> findRandomFourBrands();
+
 }

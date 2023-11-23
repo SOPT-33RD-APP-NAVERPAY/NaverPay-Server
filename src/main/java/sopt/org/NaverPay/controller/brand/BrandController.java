@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 import sopt.org.NaverPay.controller.brand.dto.response.GetBenefitBrandResponseDto;
+import sopt.org.NaverPay.controller.brand.dto.response.GetRecommendBrandResponseDto;
 import sopt.org.NaverPay.global.exception.ApiResponse;
 import sopt.org.NaverPay.global.exception.SuccessType;
 import sopt.org.NaverPay.service.brand.BrandService;
@@ -25,5 +26,11 @@ public class BrandController {
     @ResponseStatus(HttpStatus.OK)
     public ApiResponse<GetBenefitBrandResponseDto> getBenefitBrands(@RequestHeader(CUSTOM_AUTH_ID) Long userId) {
         return ApiResponse.success(SuccessType.GET_BENEFIT_BRAND_LIST_SUCCESS, brandService.getBenefitBrands(userId));
+    }
+
+    @GetMapping("/recommend")
+    @ResponseStatus(HttpStatus.OK)
+    public ApiResponse<GetRecommendBrandResponseDto> getRecommendBrands() {
+        return ApiResponse.success(SuccessType.GET_RECOMMEND_BRAND_LIST_SUCCESS, brandService.getRecommendBrands());
     }
 }
