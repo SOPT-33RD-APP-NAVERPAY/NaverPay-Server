@@ -15,7 +15,7 @@ import jakarta.persistence.OneToOne;
 import lombok.AccessLevel;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import sopt.org.NaverPay.domain.basetime.BaseTimeEntity;
+import sopt.org.NaverPay.domain.common.BaseTimeEntity;
 import sopt.org.NaverPay.domain.brand.Brand;
 import sopt.org.NaverPay.domain.user.User;
 
@@ -42,3 +42,4 @@ public class Point extends BaseTimeEntity {
     @JoinColumn(name = "brand_id", foreignKey = @ForeignKey(ConstraintMode.NO_CONSTRAINT))
     private Brand brand;
 }
+

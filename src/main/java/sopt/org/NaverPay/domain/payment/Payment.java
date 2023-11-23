@@ -15,7 +15,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import sopt.org.NaverPay.domain.basetime.BaseTimeEntity;
+import sopt.org.NaverPay.domain.common.BaseTimeEntity;
 import sopt.org.NaverPay.domain.brand.Brand;
 import sopt.org.NaverPay.domain.user.User;
 
