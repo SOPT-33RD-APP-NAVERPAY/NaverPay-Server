@@ -45,12 +45,4 @@ public class Brand extends BaseTimeEntity {
 
     private int distance;
 
-    @OneToOne
-    @JoinColumn(name = "payment_id")
-    private Payment payment;
-
-    @OneToOne
-    @JoinColumn(name = "point_id")
-    private Payment point;
-
 }
