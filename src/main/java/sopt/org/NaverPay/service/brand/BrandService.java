@@ -50,14 +50,20 @@ public class BrandService {
         User user = findUserById(userId);
         Brand brand = findBrandById(brandId);
 
+        BrandLikeId brandLikeId = BrandLikeId.builder()
+                .brandId(brandId)
+                .userId(userId)
+                .build();
+
         BrandLike brandLike = BrandLike.builder()
-                .brandLikeId(BrandLikeId.builder()
-                        .brandId(brandId)
-                        .userId(userId)
-                        .build())
+                .brandLikeId(brandLikeId)
                 .brand(brand)
                 .user(user)
                 .build();
+
+        if (brandLikeRepository.findByBrandLikeId(brandLikeId).isPresent()) {
+            throw new CustomException(ErrorType.ALREADY_LIKE_BRAND);
+        }
 
         brandLikeRepository.save(brandLike);
         return BrandLikeResponseDto.of(brandLike, true);
