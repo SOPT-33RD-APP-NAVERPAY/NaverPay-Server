@@ -49,20 +49,28 @@ public class BrandService {
     public BrandLikeResponseDto likeBrand(Long userId, Long brandId) {
         User user = findUserById(userId);
         Brand brand = findBrandById(brandId);
-        BrandLikeId brandLikeId = BrandLikeId.builder()
-                .brandId(brandId)
-                .userId(userId)
-                .build();
-
 
         BrandLike brandLike = BrandLike.builder()
-                .brandLikeId(brandLikeId)
+                .brandLikeId(BrandLikeId.builder()
+                        .brandId(brandId)
+                        .userId(userId)
+                        .build())
                 .brand(brand)
                 .user(user)
                 .build();
 
         brandLikeRepository.save(brandLike);
         return BrandLikeResponseDto.of(brandLike, true);
+    }
+
+    @Transactional
+    public BrandLikeResponseDto dislikeBrand(Long userId, Long brandId) {
+        BrandLike brandLike = getBrandLikeById(BrandLikeId.builder()
+                .userId(userId)
+                .brandId(brandId)
+                .build());
+        brandLikeRepository.delete(brandLike);
+        return BrandLikeResponseDto.of(brandLike, false);
     }
 
     private User findUserById(Long userId) {
@@ -77,4 +85,9 @@ public class BrandService {
         );
     }
 
+    private BrandLike getBrandLikeById(BrandLikeId brandLikeId) {
+        return brandLikeRepository.findByBrandLikeId(brandLikeId).orElseThrow(
+                () -> new CustomException(ErrorType.NOT_FOUND_BRAND_LIKE)
+        );
+    }
 }

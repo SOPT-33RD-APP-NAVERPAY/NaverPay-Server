@@ -12,6 +12,8 @@ public enum ErrorType {
      * 400 BAD REQUEST
      */
     REQUEST_VALIDATION_EXCEPTION(HttpStatus.BAD_REQUEST, "잘못된 요청입니다"),
+    ALREADY_LIKE_BRAND(HttpStatus.BAD_REQUEST, "이미 찜하기 한 브랜드 입니다."),
+    NOT_FOUND_BRAND_LIKE(HttpStatus.BAD_REQUEST, "브랜드 찜하기 내역이 존재하지 않습니다."),
 
     /**
      * 401 UNAUTHORIZED

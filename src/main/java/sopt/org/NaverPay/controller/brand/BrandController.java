@@ -2,6 +2,7 @@ package sopt.org.NaverPay.controller.brand;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -41,5 +42,11 @@ public class BrandController {
     @ResponseStatus(HttpStatus.CREATED)
     public ApiResponse<BrandLikeResponseDto> likeBrand(@RequestHeader(CUSTOM_AUTH_ID) Long userId, @PathVariable Long brandId) {
         return ApiResponse.success(SuccessType.BRAND_LIKE_SUCCESS, brandService.likeBrand(userId, brandId));
+    }
+
+    @DeleteMapping("/like/{brandId}")
+    @ResponseStatus(HttpStatus.OK)
+    public ApiResponse<BrandLikeResponseDto> dislikeBrand(@RequestHeader(CUSTOM_AUTH_ID) Long userId, @PathVariable Long brandId) {
+        return ApiResponse.success(SuccessType.BRAND_DISLIKE_SUCCESS, brandService.dislikeBrand(userId, brandId));
     }
 }
