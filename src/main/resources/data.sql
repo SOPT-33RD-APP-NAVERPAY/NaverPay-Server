@@ -1,4 +1,5 @@
 use cds_naverpay_db;
+
 INSERT INTO `user` (name, total_saving)
 VALUES ('남희주', 11500),
        ('원하연', 2000);
@@ -17,11 +18,15 @@ VALUES ('CU', 'https://user-images.githubusercontent.com/80024278/285090785-d642
        ('탑텐', 'https://user-images.githubusercontent.com/80024278/285090783-200dc60c-adc2-4642-83cd-4ea07034c037.png', '30만원 이상 결제 시', 'MAX', null, 260),
        ('서브웨이', 'https://user-images.githubusercontent.com/80024278/285090794-5c6952e0-1b73-468a-8419-8eefa5718d87.png', '30만원 이상 결제 시', 'TEN_PERCENT', null, 180),
        ('빽다방', 'https://user-images.githubusercontent.com/80024278/285090798-ada08b7b-6832-4a07-bdfc-6f8ad8dee790.png', '네이버페이 회원은 매일', 'TEN_PERCENT', null, 170),
-       ('샐러디', 'https://user-images.githubusercontent.com/80024278/285090787-a69458ac-a660-4853-ae0c-81592f52dbb3.png', 'QR결제시 최대 2천원 할인', 'MAX', null, null),
-       ('KREAM', 'https://user-images.githubusercontent.com/80024278/285090781-fdfbf93a-251c-422d-8b9f-63b9ea1f9295.png', '네이버페이 회원은 매일', 'DOUBLE_BENEFIT', null, null),
-       ('뚜레쥬르', 'https://user-images.githubusercontent.com/80024278/285090790-514b483b-1034-4d81-886a-dac9121b7283.png', 'QR결제시 최대 2천원 할인', 'MAX', null, null),
-       ('투썸플레이스', 'https://user-images.githubusercontent.com/80024278/285090801-29cbc8f2-54da-4e61-bef6-5dd329ec5031.png', 'QR결제시 최대 2천원 할인', 'MAX', null, null)
+       ('샐러디', 'https://user-images.githubusercontent.com/80024278/285090787-a69458ac-a660-4853-ae0c-81592f52dbb3.png', 'QR결제시 최대 2천원 할인', 'MAX', null, 10),
+       ('KREAM', 'https://user-images.githubusercontent.com/80024278/285090781-fdfbf93a-251c-422d-8b9f-63b9ea1f9295.png', '네이버페이 회원은 매일', 'DOUBLE_BENEFIT', null, 150),
+       ('뚜레쥬르', 'https://user-images.githubusercontent.com/80024278/285090790-514b483b-1034-4d81-886a-dac9121b7283.png', 'QR결제시 최대 2천원 할인', 'MAX', null, 180),
+       ('투썸플레이스', 'https://user-images.githubusercontent.com/80024278/285090801-29cbc8f2-54da-4e61-bef6-5dd329ec5031.png', 'QR결제시 최대 2천원 할인', 'MAX', null, 270);
 
-;
+
+INSERT INTO brand_like (brand_id, user_id)
+VALUES (1,1),
+       (2,1);
+
 
 
