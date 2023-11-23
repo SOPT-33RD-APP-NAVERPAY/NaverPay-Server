@@ -1,5 +1,6 @@
 package sopt.org.NaverPay.domain.user;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
@@ -13,6 +14,7 @@ import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
+import sopt.org.NaverPay.domain.brand.BrandLike;
 import sopt.org.NaverPay.domain.common.BaseTimeEntity;
 import sopt.org.NaverPay.domain.payment.Payment;
 import sopt.org.NaverPay.domain.point.Point;
@@ -45,6 +47,8 @@ public class User extends BaseTimeEntity {
     @OneToMany(fetch = FetchType.LAZY)
     private List<Point> pointList = new ArrayList<>();
 
+    @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
+    private final List<BrandLike> brandLikeList = new ArrayList<>();
 
     public void updatePoint(int saving) {
         this.totalSaving += saving;
