@@ -41,5 +41,4 @@ public class Brand extends BaseTimeEntity {
     private String place;
 
     private int distance;
-
 }

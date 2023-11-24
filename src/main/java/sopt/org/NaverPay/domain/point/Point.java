@@ -31,6 +31,7 @@ public class Point extends BaseTimeEntity {
     @Column(nullable = false)
     private int saving;
 
+    @Column(nullable = false)
     @Enumerated(value = EnumType.STRING)
     private PointType pointType;
 

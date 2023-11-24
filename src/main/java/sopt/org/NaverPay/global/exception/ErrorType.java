@@ -20,6 +20,7 @@ public enum ErrorType {
     /**
      * 404 NOT FOUND
      */
+    NOT_FOUND_USER(HttpStatus.NOT_FOUND, "존재하지 않는 유저입니다."),
 
     /**
      * 500 INTERNAL SERVER ERROR
