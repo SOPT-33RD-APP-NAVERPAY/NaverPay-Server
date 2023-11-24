@@ -15,6 +15,7 @@ import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import sopt.org.NaverPay.domain.brand.BrandLike;
+import sopt.org.NaverPay.domain.brand.BrandLikeId;
 import sopt.org.NaverPay.domain.common.BaseTimeEntity;
 import sopt.org.NaverPay.domain.payment.Payment;
 import sopt.org.NaverPay.domain.point.Point;
@@ -52,5 +53,17 @@ public class User extends BaseTimeEntity {
 
     public void updatePoint(int saving) {
         this.totalSaving += saving;
+    }
+
+    public void addBrandLike(BrandLike brandLike) {
+        if (!brandLikeList.contains(brandLike)) {
+            this.brandLikeList.add(brandLike);
+        }
+    }
+
+    public void deleteBrandLike(BrandLike brandLike) {
+        if (brandLikeList.contains(brandLike)) {
+            this.brandLikeList.remove(brandLike);
+        }
     }
 }

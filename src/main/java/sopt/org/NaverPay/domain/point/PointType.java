@@ -14,5 +14,5 @@ public enum PointType {
         PAYMENT_METHOD("결제수단");
 
         private final String value;
-    }
+}
 
