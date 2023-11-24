@@ -8,10 +8,14 @@ import org.springframework.http.HttpStatus;
 @Getter
 @AllArgsConstructor(access = AccessLevel.PROTECTED)
 public enum ErrorType {
+
     /**
      * 400 BAD REQUEST
      */
-    REQUEST_VALIDATION_EXCEPTION(HttpStatus.BAD_REQUEST, "잘못된 요청입니다"),
+    VALIDATION_WRONG_TYPE_EXCEPTION(HttpStatus.BAD_REQUEST, "잘못된 타입이 입력되었습니다."),
+    HEADER_REQUEST_MISSING_EXCEPTION(HttpStatus.BAD_REQUEST, "요청에 필요한 헤더값이 존재하지 않습니다."),
+    INVALID_HTTP_METHOD(HttpStatus.BAD_REQUEST, "지원되지 않는 HTTP Method 요청입니다."),
+
     ALREADY_LIKE_BRAND(HttpStatus.BAD_REQUEST, "이미 찜하기 한 브랜드 입니다."),
     NOT_FOUND_BRAND_LIKE(HttpStatus.BAD_REQUEST, "브랜드 찜하기 내역이 존재하지 않습니다."),
 
@@ -28,6 +32,8 @@ public enum ErrorType {
     /**
      * 500 INTERNAL SERVER ERROR
      */
+    INDEX_OUT_OF_BOUNDS(HttpStatus.INTERNAL_SERVER_ERROR, "인덱스 범위를 초과했습니다."),
+
     ;
 
     private final HttpStatus httpStatus;
