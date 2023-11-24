@@ -12,7 +12,7 @@ VALUES ('CU', 'https://user-images.githubusercontent.com/80024278/285090785-d642
        ('GS25', 'https://user-images.githubusercontent.com/80024278/285090810-419d8a5f-1bc7-4ef1-a222-f8e4dd77c08b.png', '30만원 이상 결제 시', 'MAX', '신논현점', 300),
        ('도미노피자', 'https://user-images.githubusercontent.com/80024278/285090788-69dd5cb7-90e2-4117-a1d2-c140e72c93b8.png', 'QR결제시 최대 2천원 할인', 'MAX', '건대점', 300),
        ('ZARA', 'https://user-images.githubusercontent.com/80024278/285090778-770450d4-93a4-44ba-a771-f89612c2fd80.png', '30만원 이상 결제 시', 'MAX', null, 150),
-       ('SPAO', 'https://user-images.githubusercontent.com/80024278/285090775-fec9e889-18aa-42a1-8fd8-9c7911edc6c2.png', '30만원 이상 결제 시', 'ONE_THOUSAND_WON', null, 300),
+       ('SPAO', 'https://user-images.githubusercontent.com/80024278/285090775-fec9e889-18aa-42a1-8fd8-9c7911edc6c2.png', '30만원 이상 결제 시', 'TEN_THOUSAND_WON', null, 300),
        ('H&M', 'https://user-images.githubusercontent.com/80024278/285090780-301c3843-9979-456c-911f-966bef664a15.png', '30만원 이상 결제 시', 'DOUBLE_BENEFIT', null, 100),
        ('무신사', 'https://user-images.githubusercontent.com/80024278/285090771-18f17fc8-a168-4d31-8865-1844d4593bc1.png', '네이버페이 회원은 매일', 'MAX', null, 200),
        ('탑텐', 'https://user-images.githubusercontent.com/80024278/285090783-200dc60c-adc2-4642-83cd-4ea07034c037.png', '30만원 이상 결제 시', 'MAX', null, 260),
