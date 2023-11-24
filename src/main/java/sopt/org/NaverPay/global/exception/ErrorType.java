@@ -32,6 +32,7 @@ public enum ErrorType {
     /**
      * 500 INTERNAL SERVER ERROR
      */
+    INTERNAL_SERVER_ERROR(HttpStatus.INTERNAL_SERVER_ERROR, "알 수 없는 서버 에러가 발생했습니다"),
     INDEX_OUT_OF_BOUNDS(HttpStatus.INTERNAL_SERVER_ERROR, "인덱스 범위를 초과했습니다."),
 
     ;

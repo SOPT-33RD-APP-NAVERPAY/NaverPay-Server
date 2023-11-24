@@ -56,10 +56,14 @@ public class User extends BaseTimeEntity {
     }
 
     public void addBrandLike(BrandLike brandLike) {
-        this.brandLikeList.add(brandLike);
+        if (!brandLikeList.contains(brandLike)) {
+            this.brandLikeList.add(brandLike);
+        }
     }
 
     public void deleteBrandLike(BrandLike brandLike) {
-        this.brandLikeList.remove(brandLike);
+        if (brandLikeList.contains(brandLike)) {
+            this.brandLikeList.remove(brandLike);
+        }
     }
 }

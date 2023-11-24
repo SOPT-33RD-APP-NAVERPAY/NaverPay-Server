@@ -1,10 +1,12 @@
 package sopt.org.NaverPay.service.brand;
 
 import java.util.List;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
+import sopt.org.NaverPay.controller.brand.dto.response.BrandDto;
 import sopt.org.NaverPay.controller.brand.dto.response.BrandLikeResponseDto;
 import sopt.org.NaverPay.controller.brand.dto.response.GetBenefitBrandResponseDto;
 import sopt.org.NaverPay.controller.brand.dto.response.GetRecommendBrandResponseDto;
@@ -34,8 +36,11 @@ public class BrandService {
         List<Brand> brandList = brandRepository.findRandomThreeBrands();
 
         log.info("랜덤 3개의 브랜드 리스트 추출: {}", brandList.size());
+        List<BrandDto> brandDtoList = brandList.stream()
+                .map(b -> BrandDto.of(b, brandLikeRepository.existsBrandLikeByBrandAndUser(b, user)))
+                .collect(Collectors.toList());
 
-        return GetBenefitBrandResponseDto.of(user, brandList);
+        return GetBenefitBrandResponseDto.of(user, brandDtoList);
     }
 
     // 혜택 추천 브랜드 리스트 조회
@@ -64,9 +69,9 @@ public class BrandService {
         if (brandLikeRepository.findByBrandLikeId(brandLikeId).isPresent()) {
             throw new CustomException(ErrorType.ALREADY_LIKE_BRAND);
         }
+        brandLikeRepository.save(brandLike);
         user.addBrandLike(brandLike);
 
-        brandLikeRepository.save(brandLike);
         return BrandLikeResponseDto.of(brandLike, true);
     }
 

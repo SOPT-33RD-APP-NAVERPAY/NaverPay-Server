@@ -54,6 +54,12 @@ public class ControllerExceptionAdvice {
         return ApiResponse.error(ErrorType.INDEX_OUT_OF_BOUNDS, e);
     }
 
+    @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
+    @ExceptionHandler(IllegalArgumentException.class)
+    public ApiResponse<Exception> handlerIllegalArgumentException(final IllegalArgumentException e) {
+        return ApiResponse.error(ErrorType.INTERNAL_SERVER_ERROR, e);
+    }
+
     /**
      * CUSTOM_ERROR
      */
