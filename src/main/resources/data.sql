@@ -22,6 +22,15 @@ VALUES ('CU', 'https://user-images.githubusercontent.com/80024278/285090785-d642
        ('뚜레쥬르', 'https://user-images.githubusercontent.com/80024278/285090790-514b483b-1034-4d81-886a-dac9121b7283.png', 'QR결제시 최대 2천원 할인', 'MAX', null, null),
        ('투썸플레이스', 'https://user-images.githubusercontent.com/80024278/285090801-29cbc8f2-54da-4e61-bef6-5dd329ec5031.png', 'QR결제시 최대 2천원 할인', 'MAX', null, null)
 
-;
+INSERT INTO point(saving, point_type)
+VALUES (1260, '기본'),
+       (2920, '멤버쉽'),
+       (2300, '리뷰'),
+       (5020, '결제수단')  // 원형 카테고리 표
+
+
+INSERT INTO payment(amount, brand_id, user_id)
+VALUES (25000, 1, 1)
+
 
 
