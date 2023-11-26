@@ -16,6 +16,7 @@ public enum SuccessType {
     BRAND_DISLIKE_SUCCESS(HttpStatus.OK, "혜택 브랜드 찜하기 취소에 성공했습니다."),
     GET_PLACE_SUCCESS(HttpStatus.OK, "현장결제 장소 조회에 성공했습니다."),
     GET_POINT_SUCCESS(HttpStatus.OK,"포인트 내역 조회에 성공했습니다."),
+    GET_HOME_SUCCESS(HttpStatus.OK, "홈화면 조회에 성공했습니다."),
 
     /**
      * 201 CREATED
