@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import sopt.org.NaverPay.controller.payment.dto.response.BrandDto;
-import sopt.org.NaverPay.controller.payment.dto.response.DataDto;
+import sopt.org.NaverPay.controller.payment.dto.response.PaymentResponseDto;
 import sopt.org.NaverPay.controller.payment.dto.response.NearByBrandDto;
 import sopt.org.NaverPay.controller.payment.dto.response.OnSitePaymentBrandDto;
 import sopt.org.NaverPay.domain.brand.Brand;
@@ -16,7 +16,6 @@ import sopt.org.NaverPay.repository.brand.BrandRepository;
 import sopt.org.NaverPay.repository.user.UserRepository;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 @Slf4j   // 서버 로그 남기기
 @Service   // 서비스 빈이다
@@ -27,7 +26,7 @@ public class PaymentService {
     private final BrandRepository brandRepository;
     private final UserRepository userRepository;
 
-    public DataDto getPlace(Long userId) {
+    public PaymentResponseDto getPlace(Long userId) {
         User user = findUserById(userId);
 
         // near by dto list
@@ -42,7 +41,7 @@ public class PaymentService {
         List<Brand> onSiteBrandList = brandRepository.findRandomSixBrands();
         List<OnSitePaymentBrandDto> onSitePaymentBrandDtoList = onSiteBrandList.stream().map(OnSitePaymentBrandDto::of).toList();
 
-        return DataDto.of(brandDtoList, nearByBrandDtoList, onSitePaymentBrandDtoList, user);
+        return PaymentResponseDto.of(brandDtoList, nearByBrandDtoList, onSitePaymentBrandDtoList, user);
     }
 
     private User findUserById(Long userId) {
