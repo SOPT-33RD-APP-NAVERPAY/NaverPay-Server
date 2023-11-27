@@ -1,5 +1,6 @@
 package sopt.org.NaverPay.domain.brand;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.ConstraintMode;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;
@@ -23,12 +24,12 @@ public class BrandLike extends BaseTimeEntity {
     @EmbeddedId
     private BrandLikeId brandLikeId;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @MapsId("userId")
     @JoinColumn(name = "user_id", nullable = false, foreignKey = @ForeignKey(ConstraintMode.CONSTRAINT))
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
     @MapsId("brandId")
     @JoinColumn(name = "brand_id", nullable = false, foreignKey = @ForeignKey(ConstraintMode.CONSTRAINT))
     private Brand brand;
