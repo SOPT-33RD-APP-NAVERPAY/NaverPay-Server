@@ -30,6 +30,9 @@
 | Java version | Java 17 |
 | 패키지 구조 | 계층형 패키지 구조 |
 
+### 아키텍쳐 구조도
+<img width="847" alt="image" src="https://github.com/SOPT-33RD-APP-NAVERPAY/NaverPay-Server/assets/80024278/f5564307-58bc-4415-ba55-80f12927ecdf">
+
 
 ### Project Structure
 
