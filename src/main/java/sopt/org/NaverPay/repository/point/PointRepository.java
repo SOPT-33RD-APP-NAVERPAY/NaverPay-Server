@@ -12,4 +12,6 @@ public interface PointRepository extends JpaRepository<Point, Long> {
 
     List<Point> findByUser(User user);
     List<Point> findByUserAndPointType(User user, PointType pointType);
+
+    // 3개 일때 새로 로직 생성
 }

@@ -67,8 +67,4 @@ VALUES (1260, '기본'),
        (5020, '결제수단')  // 원형 카테고리 표
 
 
-INSERT INTO payment(amount, brand_id, user_id)
-VALUES (25000, 1, 1)
-
-
 

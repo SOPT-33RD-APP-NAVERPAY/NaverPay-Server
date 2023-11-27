@@ -1,6 +1,7 @@
 package sopt.org.NaverPay.service.point;
 
 import lombok.RequiredArgsConstructor;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Service;
 import sopt.org.NaverPay.controller.payment.dto.response.PaymentResponseDto;
 import sopt.org.NaverPay.controller.point.dto.response.BrandDto;
@@ -20,6 +21,7 @@ import java.util.Optional;
 
 @RequiredArgsConstructor
 @Service
+@Slf4j
 public class PointService {
 
     private final PointRepository pointRepository;
@@ -57,7 +59,7 @@ public class PointService {
         }
 
         // userId = 1인 유저가 결제한 point 내역의 브랜드들
-        List<Point> pointList = pointRepository.findByUser(user);
+        List<Point> pointList = pointRepository.findByUser(user);   // 3개 제한인거 생각해보기
         // user - 1, brand - 1, saving 2000, creadAT
         // user - 1, bread - 2, saving 3000, creadAT
         //..

@@ -43,5 +43,4 @@ public class PointResponseDto {
                 .brandDtoList(brandDtoList)
                 .build();
     }
-
 }
