@@ -24,12 +24,12 @@ public class BrandLike extends BaseTimeEntity {
     @EmbeddedId
     private BrandLikeId brandLikeId;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("userId")
     @JoinColumn(name = "user_id", nullable = false, foreignKey = @ForeignKey(ConstraintMode.CONSTRAINT))
     private User user;
 
-    @ManyToOne(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    @ManyToOne(fetch = FetchType.LAZY)
     @MapsId("brandId")
     @JoinColumn(name = "brand_id", nullable = false, foreignKey = @ForeignKey(ConstraintMode.CONSTRAINT))
     private Brand brand;
