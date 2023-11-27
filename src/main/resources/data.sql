@@ -28,43 +28,43 @@ INSERT INTO brand_like (brand_id, user_id)
 VALUES (1,1),
        (2,1);
 
-INSERT INTO point (saving, point_type, user_id, brand_id)
-VALUES (1260, '기본', 1, 1),
-       (2920, '멤버쉽', 1, 2),
-       (2300, '리뷰', 1, 4),
-       (100, '결제수단', 1, 5),
-       (240, '멤버쉽', 1, 2),
-       (230, '리뷰', 1, 4),
-       (500, '결제수단', 1, 5),
-       (20, '멤버쉽', 1, 2),
-       (110, '리뷰', 1, 4),
-       (5020, '결제수단', 1, 5),
-       (2920, '멤버쉽', 1, 2),
-       (2300, '리뷰', 1, 4),
-       (5020, '결제수단', 2, 8),
-       (2300, '리뷰', 2, 4),
-       (100, '결제수단', 2, 7),
-       (240, '멤버쉽', 2, 2),
-       (240, '기본', 2, 2),
-       (100, '결제수단', 2, 5),
-       (240, '멤버쉽', 2, 2),
-       (240, '기본', 2, 2),
-       (100, '결제수단', 2, 5),
-       (240, '멤버쉽', 2, 2),
-       (240, '기본', 2, 4);
+INSERT INTO point (saving, point_type, user_id, brand_id, created_at, updated_at)
+VALUES (1260, 'BASIC', 1, 1, now(), now()),
+       (2920, 'MEMBERSHIP', 1, 2, now(), now()),
+       (2300, 'REVIEW', 1, 4, now(), now()),
+       (100, 'PAYMENT_METHOD', 1, 5, now(), now()),
+       (240, 'MEMBERSHIP', 1, 2, now(), now()),
+       (230, 'REVIEW', 1, 4, now(), now()),
+       (500, 'PAYMENT_METHOD', 1, 5, now(), now()),
+       (20, 'MEMBERSHIP', 1, 2, now(), now()),
+       (110, 'REVIEW', 1, 4, now(), now()),
+       (5020, 'PAYMENT_METHOD', 1, 5, now(), now()),
+       (2920, 'MEMBERSHIP', 1, 2, now(), now()),
+       (2300, 'REVIEW', 1, 4, now(), now()),
+       (5020, 'PAYMENT_METHOD', 2, 8, now(), now()),
+       (2300, 'REVIEW', 2, 4, now(), now()),
+       (100, 'PAYMENT_METHOD', 2, 7, now(), now()),
+       (240, 'MEMBERSHIP', 2, 2, now(), now()),
+       (240, 'BASIC', 2, 2, now(), now()),
+       (100, 'PAYMENT_METHOD', 2, 5, now(), now()),
+       (240, 'MEMBERSHIP', 2, 2, now(), now()),
+       (240, 'BASIC', 2, 2, now(), now()),
+       (100, 'PAYMENT_METHOD', 2, 5, now(), now()),
+       (240, 'MEMBERSHIP', 2, 2, now(), now()),
+       (240, 'BASIC', 2, 4, now(), now());
 
 
-INSERT INTO payment (amount, user_id, brand_id)
-VALUES (25000, 1, 1),
-       (10000, 2, 1),
-       (3000, 1, 3),
-       (2400, 1, 5);
+INSERT INTO payment (amount, user_id, brand_id, created_at, updated_at)
+VALUES (25000, 1, 1, now(), now()),
+       (10000, 2, 1, now(), now()),
+       (3000, 1, 3, now(), now()),
+       (2400, 1, 5, now(), now());
 
-INSERT INTO point(saving, point_type)
-VALUES (1260, '기본'),
-       (2920, '멤버쉽'),
-       (2300, '리뷰'),
-       (5020, '결제수단')  // 원형 카테고리 표
+INSERT INTO point(saving, point_type, created_at, updated_at)
+VALUES (1260, 'BASIC', now(), now()),
+       (2920, 'MEMBERSHIP', now(), now()),
+       (2300, 'REVIEW', now(), now()),
+       (5020, 'PAYMENT_METHOD', now(), now())  #원형 카테고리 표
 
 
 
