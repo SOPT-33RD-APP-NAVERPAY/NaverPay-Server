@@ -7,6 +7,10 @@ import lombok.Getter;
 import sopt.org.NaverPay.domain.brand.Brand;
 import sopt.org.NaverPay.domain.common.BaseTimeEntity;
 import sopt.org.NaverPay.domain.point.Point;
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+
+import java.time.LocalDateTime;
 
 @Builder
 @Getter
@@ -24,7 +28,7 @@ public class BrandDto {
                 .id(brand.getId())
                 .name(brand.getName())
                 .saving(point.getSaving())
-                .payment_date(point.getCreatedAt().toString())   // TODO 추후 형식 수정
+                .payment_date(point.getCreatedAt().format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM))) // 출력 형식 수정
                 .build();
     }
 }

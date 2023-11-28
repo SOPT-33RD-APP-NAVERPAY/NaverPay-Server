@@ -60,11 +60,11 @@ VALUES (25000, 1, 1),
        (3000, 1, 3),
        (2400, 1, 5);
 
-INSERT INTO point(saving, point_type)
-VALUES (1260, '기본'),
-       (2920, '멤버쉽'),
-       (2300, '리뷰'),
-       (5020, '결제수단')  // 원형 카테고리 표
+INSERT INTO point(saving, point_type, user_id, brand_id)
+VALUES (1260, '기본', 1, 2),
+       (2920, '멤버쉽', 1, 2),
+       (2300, '리뷰', 1, 2),
+       (5020, '결제수단', 1, 2)  // 원형 카테고리 표
 
 
 

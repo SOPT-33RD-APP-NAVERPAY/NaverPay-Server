@@ -6,6 +6,9 @@ import lombok.Getter;
 import sopt.org.NaverPay.domain.brand.Brand;
 import sopt.org.NaverPay.domain.payment.Payment;
 
+import java.time.format.DateTimeFormatter;
+import java.time.format.FormatStyle;
+
 @Getter
 @Builder
 public class OnsitePaymentDto {
@@ -28,7 +31,7 @@ public class OnsitePaymentDto {
                 .place(brand.getPlace())
                 .logoImgUrl(brand.getLogoImgUrl())
                 .amount(payment.getAmount())
-                .paymentDate(payment.getCreatedAt().toString())
+                .paymentDate(payment.getCreatedAt().format(DateTimeFormatter.ofLocalizedDateTime(FormatStyle.MEDIUM)))
                 .build();
     }
 }

@@ -59,7 +59,7 @@ public class PointService {
         }
 
         // userId = 1인 유저가 결제한 point 내역의 브랜드들
-        List<Point> pointList = pointRepository.findByUser(user);   // 3개 제한인거 생각해보기
+        List<Point> pointList = pointRepository.findTop3ByUserOrderBySavingDesc(user);
         // user - 1, brand - 1, saving 2000, creadAT
         // user - 1, bread - 2, saving 3000, creadAT
         //..
