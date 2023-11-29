@@ -34,8 +34,8 @@ public class BrandController {
 
     @GetMapping("/recommend")
     @ResponseStatus(HttpStatus.OK)
-    public ApiResponse<GetRecommendBrandResponseDto> getRecommendBrands() {
-        return ApiResponse.success(SuccessType.GET_RECOMMEND_BRAND_LIST_SUCCESS, brandService.getRecommendBrands());
+    public ApiResponse<GetRecommendBrandResponseDto> getRecommendBrands(@RequestHeader(CUSTOM_AUTH_ID) Long userId) {
+        return ApiResponse.success(SuccessType.GET_RECOMMEND_BRAND_LIST_SUCCESS, brandService.getRecommendBrands(userId));
     }
 
     @PostMapping("/like/{brandId}")
