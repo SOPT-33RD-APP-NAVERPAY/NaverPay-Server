@@ -44,7 +44,8 @@ public class BrandService {
     }
 
     // 혜택 추천 브랜드 리스트 조회
-    public GetRecommendBrandResponseDto getRecommendBrands() {
+    public GetRecommendBrandResponseDto getRecommendBrands(Long userId) {
+        User user = findUserById(userId);
         List<Brand> brandList = brandRepository.findRandomFourBrands();
         return GetRecommendBrandResponseDto.of(brandList);
     }
