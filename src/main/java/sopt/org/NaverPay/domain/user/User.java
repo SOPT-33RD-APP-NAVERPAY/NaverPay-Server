@@ -43,10 +43,10 @@ public class User extends BaseTimeEntity {
     private int totalSaving = 0;
 
     @OneToMany(fetch = FetchType.LAZY)
-    private List<Payment> paymentList = new ArrayList<>();
+    private final List<Payment> paymentList = new ArrayList<>();
 
     @OneToMany(fetch = FetchType.LAZY)
-    private List<Point> pointList = new ArrayList<>();
+    private final List<Point> pointList = new ArrayList<>();
 
     @OneToMany(cascade = CascadeType.ALL, orphanRemoval = true)
     private final List<BrandLike> brandLikeList = new ArrayList<>();

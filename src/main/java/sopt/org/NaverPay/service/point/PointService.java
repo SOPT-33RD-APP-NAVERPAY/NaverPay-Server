@@ -59,11 +59,11 @@ public class PointService {
         }
 
         // userId = 1인 유저가 결제한 point 내역의 브랜드들
-        List<Point> pointList = pointRepository.findTop3ByUserOrderBySavingDesc(user);
+        List<Point> pointList = pointRepository.findTop3ByUserOrderBySavingDesc(user);  // saving값이 큰 순서대로 3개의 내역 추출
         // user - 1, brand - 1, saving 2000, creadAT
         // user - 1, bread - 2, saving 3000, creadAT
         //..
-        // TODO 3개만 뽑아야 한다면 어떤 기준으로 해야 하는지
+
         List<BrandDto> brandDtoList = new ArrayList<>();
         for (Point point : pointList) {
             BrandDto brandDto = BrandDto.of(point.getBrand(), point);

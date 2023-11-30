@@ -46,4 +46,7 @@ public class HomeService {
                 () -> new CustomException(ErrorType.NOT_FOUND_USER)
         );
     }
+
+
+
 }

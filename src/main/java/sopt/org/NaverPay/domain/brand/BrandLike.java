@@ -1,5 +1,6 @@
 package sopt.org.NaverPay.domain.brand;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.ConstraintMode;
 import jakarta.persistence.EmbeddedId;
 import jakarta.persistence.Entity;

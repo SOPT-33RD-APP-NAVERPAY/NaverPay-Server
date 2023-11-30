@@ -44,7 +44,8 @@ public class BrandService {
     }
 
     // 혜택 추천 브랜드 리스트 조회
-    public GetRecommendBrandResponseDto getRecommendBrands() {
+    public GetRecommendBrandResponseDto getRecommendBrands(Long userId) {
+        User user = findUserById(userId);
         List<Brand> brandList = brandRepository.findRandomFourBrands();
         return GetRecommendBrandResponseDto.of(brandList);
     }
@@ -54,11 +55,16 @@ public class BrandService {
     public BrandLikeResponseDto likeBrand(Long userId, Long brandId) {
         User user = findUserById(userId);
         Brand brand = findBrandById(brandId);
+        log.info("user, brand 조회 성공");
 
         BrandLikeId brandLikeId = BrandLikeId.builder()
                 .brandId(brandId)
                 .userId(userId)
                 .build();
+
+        if (brandLikeRepository.findByBrandLikeId(brandLikeId).isPresent()) {
+            throw new CustomException(ErrorType.ALREADY_LIKE_BRAND);
+        }
 
         BrandLike brandLike = BrandLike.builder()
                 .brandLikeId(brandLikeId)
@@ -66,12 +72,7 @@ public class BrandService {
                 .user(user)
                 .build();
 
-        if (brandLikeRepository.findByBrandLikeId(brandLikeId).isPresent()) {
-            throw new CustomException(ErrorType.ALREADY_LIKE_BRAND);
-        }
         brandLikeRepository.save(brandLike);
-        user.addBrandLike(brandLike);
-
         return BrandLikeResponseDto.of(brandLike, true);
     }
 
@@ -83,7 +84,6 @@ public class BrandService {
                 .brandId(brandId)
                 .build());
         brandLikeRepository.delete(brandLike);
-        user.deleteBrandLike(brandLike);
         return BrandLikeResponseDto.of(brandLike, false);
     }
 

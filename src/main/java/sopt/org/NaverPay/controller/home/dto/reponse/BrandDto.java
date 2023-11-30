@@ -23,7 +23,7 @@ public class BrandDto {
         return BrandDto.builder()
                 .id(brand.getId())
                 .name(brand.getName())
-                .place(brand.getPlace())
+                .place(brand.getPlace() == null ? " " : brand.getPlace())
                 .logoImgUrl(brand.getLogoImgUrl())
                 .discountContent(brand.getDiscountContent())
                 .build();
